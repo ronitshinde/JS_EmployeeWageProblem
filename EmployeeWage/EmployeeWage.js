@@ -38,3 +38,30 @@ const wagePerHr=20;
         console.log("Employee wage for the day = " + empWage);
 }
 
+//UC3
+{
+    const isFullTime = 2;
+    const isPartTime = 1;
+    const partTimeHr = 4;
+    const fullTimeHr = 8;
+    const wagePerHr = 20;
+
+    function getWorkingHrs(empCheck1)
+    {
+        let empHour =0;
+        switch(empCheck1)
+        {
+            case isPartTime:
+                return partTimeHr;
+                case isFullTime:
+                    return fullTimeHr;
+                    default:
+                        return 0;
+        }
+    }
+    let empCheck1 = Math.floor(Math.random()*10)%3;
+    let empHour = getWorkingHrs(empCheck1);
+    let empWage = empHour * wagePerHr;
+    console.log("Employee hours:" + empHour);
+    console.log("Employee wage is:" + empWage);
+}
