@@ -164,5 +164,12 @@ function mapDayWithWage(dailyWage)
 }
 let mapDayWithDailyWageArray = empDailyWageArr.map(mapDayWithWage);
 console.log(mapDayWithDailyWageArray);
-}
 
+//UC7.3
+function fullTimeWage(dailyWage)
+{
+    return dailyWage.includes("160");
+}
+let fullDailyWageArray = mapDayWithDailyWageArray.filter(fullTimeWage);
+console.log(fullDailyWageArray);
+}
