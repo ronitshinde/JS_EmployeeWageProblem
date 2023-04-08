@@ -173,3 +173,33 @@ function fullTimeWage(dailyWage)
 let fullDailyWageArray = mapDayWithDailyWageArray.filter(fullTimeWage);
 console.log(fullDailyWageArray);
 }
+{
+
+//UC-8
+const MaxHoursInMonth = 160;
+const NoOfWorkingDay = 20;
+let totalEmpHours = 0;
+let totalWorkingDay= 0;
+let empDailyWageArr = new Array();
+let empDailyWageMap = new Map();
+function calculateDailyWage(empHours)
+{
+    return empHours * wagePerHour;
+}
+while(totalEmpHours <= MaxHoursInMonth && totalWorkingDay < NoOfWorkingDay)
+{
+    totalWorkingDay ++;
+    let empCheck1 = Math.floor(Math.random()*10)%3;
+    let empHours = getWorkingHrs(empCheck1);
+    totalEmpHours += empHours;
+    empDailyWageArr.push(calculateDailyWage(empHours));
+    empDailyWageMap.set(totalWorkingDay,calculateDailyWage(empHours));
+}
+console.log(empDailyWageMap);
+function totalWage(totalWage,dailyWage)
+{
+    return totalWage + dailyWage;
+}
+console.log(Array.from(empDailyWageMap.values()).reduce(totalWage,0));
+}
+
