@@ -146,4 +146,23 @@ console.log(empDailyWageArr);
 console.log(totalWorkingDays);
 console.log(totalEmpHrs);
 console.log(empWage);
+
+//UC-7.2
+//Map - It will create new array from calling a function for every array element.
+//When we are having empty array it wont work.
+//It never change an existing array.It will replicate array.
+function totalWage(totalWage,dailyWage)
+{
+    return totalWage + dailyWage;
 }
+console.log("Employee wage reduce array : " + empDailyWageArr.reduce(totalWage));
+let dailyCounter = 0;
+function mapDayWithWage(dailyWage)
+{
+    dailyCounter ++;
+    return dailyCounter + "-" + dailyWage;
+}
+let mapDayWithDailyWageArray = empDailyWageArr.map(mapDayWithWage);
+console.log(mapDayWithDailyWageArray);
+}
+
